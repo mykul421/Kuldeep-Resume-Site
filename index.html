@@ -1,138 +1,229 @@
+import { useMemo } from "react";
+import { motion } from "framer-motion";
+import { Download, Mail, Linkedin, Phone, MapPin, ExternalLink, Briefcase, Award, GraduationCap, Hammer, FileText } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kuldeep Kumar – Implementation Consultant</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background: #eef2f5;
-      color: #333;
-    }
-    header {
-      background: #005792;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-    section {
-      padding: 25px;
-      background: white;
-      margin: 20px auto;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      max-width: 900px;
-    }
-    h2 {
-      color: #005792;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 6px;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    li {
-      margin-bottom: 10px;
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #005792;
-      color: white;
-      font-size: 0.9em;
-    }
-    a {
-      color: #f2a007;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
+export default function Portfolio() {
+  const download = {
+    label: "Download Resume",
+    href: "/files/Kuldeep_Kumar_Implementation_Consultant.pdf",
+    note: "Latest resume version",
+  };
 
-<header>
-  <h1>Kuldeep Kumar</h1>
-  <p>Senior Implementation Consultant | Product Delivery Expert | SaaS Solutions</p>
-  <p>Email: kumar.kuldeep421@gmail.com | <a href="https://www.linkedin.com/in/mykuldeep/" target="_blank">LinkedIn</a></p>
-</header>
+  const skills = useMemo(() => ({
+    Technical: [
+      "SQL", "Java", "Python (basic)", "HTML", "XML", "REST APIs",
+      "ETL", "Data Migration", "SaaS Configuration", "VMware",
+    ],
+    Platforms: [
+      "SQL Server", "Postgres", "JIRA", "ServiceNow", "Tableau",
+      "Apache Tomcat", "AWS", "Azure", "CI/CD",
+    ],
+    Functional: [
+      "Implementation", "Solution Design", "Requirements Gathering",
+      "Testing & Deployment", "Cutover Planning", "Training & Documentation",
+      "Production Support",
+    ],
+    Consulting: [
+      "Stakeholder Management", "Client Advisory", "Agile/Scrum",
+      "Root Cause Analysis", "Team Mentoring",
+    ],
+  }), []);
 
-<section>
-  <h2>About Me</h2>
-  <p>Implementation Engineer & Senior Consultant with 8+ years of experience delivering SaaS solutions across financial services and enterprise technology. Skilled in end-to-end implementations, system integration, automation scripting, and cross-functional stakeholder collaboration. Known for reducing deployment time, improving system reliability, and mentoring high-performing teams. Strong technical foundation in SQL, Java, APIs, and cloud/on-prem platforms.</p>
-</section>
+  const experience = [
+    {
+      company: "Sapiens India",
+      location: "Bangalore, India",
+      role: "Senior Consultant",
+      dates: "04/2021 – Present",
+      bullets: [
+        "Delivered 10+ SaaS implementations; improved deployment speed by 20% while ensuring data security compliance.",
+        "Reduced change request cycle by 25% through stakeholder alignment across 3 departments.",
+        "Drove 30% increase in user adoption via targeted enablement and training programs.",
+        "Maintained 100% security compliance; cut deployment-related security issues by 40%.",
+        "Analyzed delivery metrics to reduce cycle time by 15%; resolved 50+ escalations improving response time by 35%.",
+      ],
+    },
+    {
+      company: "Uniphore Software Systems",
+      location: "Bangalore, India",
+      role: "Implementation Engineer",
+      dates: "11/2016 – 04/2021",
+      bullets: [
+        "Coordinated cross‑functional deployments; reduced system downtime by 50%.",
+        "Resolved 60+ technical escalations per year; lowered backlog by 40%.",
+        "Built automation scripts cutting manual effort by 50%; created reusable GrXML for higher accuracy.",
+        "Ensured 100% audit readiness via standardized data handling; led QA validation and release readiness.",
+      ],
+    },
+  ];
 
-<section>
-  <h2>Skills</h2>
-  <ul>
-    <li>Program & Project Management (Agile, Hybrid)</li>
-    <li>SaaS Configuration</li>
-    <li>Agile, SDLC, Change Management, QA</li>
-    <li>SaaS Implementation & Delivery</li>
-    <li>Stakeholder Communication</li>
-    <li>Cross-functional Team Leadership</li>
-    <li>SQL, Postgres, REST APIs</li>
-    <li>Tools: JIRA, Confluence, MS Project, Excel</li>
-  </ul>
-</section>
+  const certifications = [
+    "Advanced Java – NIIT",
+    "Postgres Maintenance – PostgresCourse.com",
+    "GrXML & Nuance Transcription – Nuance Communications",
+    "Project Management Process Course",
+    "IDITSuite Data Model General Overview",
+  ];
 
-<section>
-  <h2>Experience</h2>
-  <h3>Sapiens India – Senior Consultant (2021 – Present)</h3>
-  <ul>
-    <li>Led 10+ full-cycle SaaS implementations across global clients</li>
-    <li>Managed scope, metrics, delivery planning, and stakeholder alignment</li>
-    <li>Reduced rework by 25% through process optimization</li>
-    <li>Delivered 10+ SaaS implementations, improving deployment speed by 20% while ensuring data security compliance</li>
-    <li>Collaborated with stakeholders across 3 departments to reduce change request cycles by 25%</li>
-    <li>Rolled out training programs that improved user adoption by 30%</li>
-    <li>Maintained 100% compliance with internal security standards: reduced deployment-related security issues by 40%</li>
-    <li>Analyzed delivery metrics to improve efficiency, reducing cycle time by 15%</li>
-    <li>Resolved 50+ escalated issues, improving support response time by 35%</li>
-  </ul>
+  const projects = [
+    {
+      name: "Enterprise SaaS Implementations",
+      meta: "10+ projects | 95% CSAT",
+      summary:
+        "Led end‑to‑end implementations (requirements → go‑live → hypercare) across financial services and enterprise tech; delivered measurable gains in time‑to‑value and adoption.",
+    },
+    {
+      name: "Deployment Automation",
+      meta: "50% manual effort reduction",
+      summary:
+        "Built repeatable automation scripts and cutover checklists; standardized handovers, improved rollout reliability, and reduced change‑failure rate.",
+    },
+  ];
 
-  <h3>Uniphore – Implementation Engineer (2016 – 2021)</h3>
-  <ul>
-    <li>Delivered voice AI implementations for enterprise clients</li>
-    <li>Integrated with legacy systems, trained users, and optimized reporting</li>
-    <li>Improved go-live efficiency by automating deployment scripts</li>
-    <li>Coordinated cross-functional deployments, reducing system downtime by 50%</li>
-    <li>Resolved 60+ technical escalations per year, cutting ticket backlog by 40%</li>
-    <li>Maintained real-time trackers improving visibility and reducing delays</li>
-    <li>Helped achieve 100% audit readiness through standardized data handling</li>
-    <li>Developed reusable speech grammar (GrXML), enhancing recognition accuracy</li>
-    <li>Managed QA validation and system readiness for deployment phases</li>
-  </ul>
-</section>
+  return (
+    <div className="min-h-screen bg-slate-50 text-slate-900">
+      <header className="bg-[#0a3d62] text-white">
+        <div className="max-w-5xl mx-auto px-6 py-10 grid md:grid-cols-[1fr_auto] gap-6 items-center">
+          <div>
+            <motion.h1
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-3xl md:text-4xl font-bold tracking-tight"
+            >
+              Kuldeep Kumar
+            </motion.h1>
+            <p className="mt-2 text-slate-200">
+              Senior Implementation Consultant • SaaS • Data Migration • API Integrations
+            </p>
+            <div className="mt-4 flex flex-wrap gap-4 text-slate-200/90">
+              <span className="inline-flex items-center gap-2"><MapPin size={18}/> Bangalore, India</span>
+              <a className="inline-flex items-center gap-2 hover:underline" href="tel:+919458705553"><Phone size={18}/> +91 9458705553</a>
+              <a className="inline-flex items-center gap-2 hover:underline" href="mailto:kumar.kuldeep421@gmail.com"><Mail size={18}/> kumar.kuldeep421@gmail.com</a>
+              <a className="inline-flex items-center gap-2 hover:underline" target="_blank" href="https://www.linkedin.com/in/mykuldeep/"><Linkedin size={18}/> /in/mykuldeep</a>
+            </div>
+          </div>
+          <div className="flex md:flex-col gap-3">
+            <a href={download.href} className="w-full" download>
+              <Button variant="secondary" className="w-full rounded-2xl shadow-md">
+                <Download className="mr-2 h-4 w-4"/> {download.label}
+              </Button>
+            </a>
+          </div>
+        </div>
+      </header>
 
-<section>
-  <h2>Certifications</h2>
-  <ul>
-    <li>Advanced Java – NIIT</li>
-    <li>Postgres Maintenance</li>
-    <li>GrXML & Nuance Transcription</li>
-    <li>Project Management Process</li>
-  </ul>
-</section>
+      <main className="max-w-5xl mx-auto px-6 py-10 space-y-10">
+        {/* Summary */}
+        <section>
+          <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><FileText/> Professional Summary</h2>
+          <Card className="rounded-2xl shadow-sm">
+            <CardContent className="p-6">
+              <p>
+                Senior Implementation Engineer / Consultant with 8+ years of experience delivering SaaS implementations,
+                integrations, and data migrations for enterprise clients. Known for reducing deployment time by 20%,
+                improving reliability, and lifting adoption by 30%. Adept at stakeholder management, solution design,
+                and mentoring teams in Agile environments.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
 
-<section>
-  <h2>Education</h2>
-  <p>B.E. in Computer Science – Sri Ram Murti Smarak College of Engineering & Technology, Bareilly</p>
-</section>
+        {/* Experience */}
+        <section>
+          <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><Briefcase/> Experience</h2>
+          <div className="grid gap-4">
+            {experience.map((role, idx) => (
+              <Card key={idx} className="rounded-2xl">
+                <CardContent className="p-6">
+                  <div className="flex flex-wrap items-baseline justify-between gap-2">
+                    <h3 className="text-lg font-semibold">{role.role} • {role.company}</h3>
+                    <div className="text-sm text-slate-500">{role.dates}</div>
+                  </div>
+                  <div className="text-sm text-slate-600">{role.location}</div>
+                  <ul className="mt-3 list-disc pl-5 space-y-1">
+                    {role.bullets.map((b, i) => (
+                      <li key={i}>{b}</li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
 
-<footer>
-  <p>© 2025 Kuldeep Kumar</p>
-</footer>
+        {/* Projects / Selected Engagements */}
+        <section>
+          <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><Hammer/> Selected Engagements</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            {projects.map((p, i) => (
+              <Card key={i} className="rounded-2xl">
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-base font-semibold">{p.name}</h3>
+                    <span className="text-xs text-slate-500">{p.meta}</span>
+                  </div>
+                  <p className="mt-2 text-sm text-slate-700">{p.summary}</p>
+                  <a className="mt-3 inline-flex items-center gap-1 text-sm text-[#0a3d62] hover:underline" href="#" onClick={(e)=>e.preventDefault()}>
+                    View case study <ExternalLink size={14}/>
+                  </a>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
 
-</body>
-</html>
+        {/* Skills */}
+        <section>
+          <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><Award/> Skills & Tools</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            {Object.entries(skills).map(([group, items]) => (
+              <Card key={group} className="rounded-2xl">
+                <CardContent className="p-6">
+                  <h3 className="font-medium mb-2">{group}</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {items.map((s) => (
+                      <span key={s} className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-sm border">
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Education & Certifications */}
+        <section>
+          <h2 className="text-xl font-semibold mb-4 flex items-center gap-2"><GraduationCap/> Education & Certifications</h2>
+          <Card className="rounded-2xl">
+            <CardContent className="p-6 space-y-3">
+              <div>
+                <div className="font-semibold">B.E. Computer Science & Engineering</div>
+                <div className="text-sm text-slate-600">Sri Ram Murti Smarak College of Engineering & Technology, Bareilly • 2015</div>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {certifications.map((c) => (
+                  <span key={c} className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-sm border">{c}</span>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+      </main>
+
+      <footer className="border-t bg-white">
+        <div className="max-w-5xl mx-auto px-6 py-8 flex flex-wrap items-center justify-between gap-4">
+          <p className="text-sm text-slate-600">© {new Date().getFullYear()} Kuldeep Kumar • Open to Senior Implementation Engineer / Senior Consultant roles</p>
+          <div className="flex gap-3">
+            <a href="mailto:kumar.kuldeep421@gmail.com" className="inline-flex items-center gap-2 text-[#0a3d62] hover:underline"><Mail size={16}/> Email</a>
+            <a target="_blank" href="https://www.linkedin.com/in/mykuldeep/" className="inline-flex items-center gap-2 text-[#0a3d62] hover:underline"><Linkedin size={16}/> LinkedIn</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
